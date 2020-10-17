@@ -9,26 +9,60 @@ Table of Contents
 ## Learning Progression 004: External LEDs (Part 1 - Fundamentals of computing I)
 
 
-## Lab kit
-[[toc](#table-of-contents)]
-
-Overview
-
-Learning progression BOM
-
 ### Step 1: Binary   
 [[toc](#table-of-contents)]
 
 #### 1. Study
 [[toc](#table-of-contents)]
 
-   - unsigned integers   
-   - finite bit-width   
-   - signed integers (derive via 1s-, then 2s-complement)  
-   - IEEE 754 floating point  
+##### Unsigned integers
+
+```javascript
+// Example 1.1.1
+
+// toUnsignedBinaryString
+//
+// 3 : 2 = 1.5  --> 1     Q > floor(Q)       11
+// 1 : 2 = 0.5  --> 1
+//
+// 2 : 2 = 1.0  --> 0     Q == floor(Q)      10
+// 1 : 2 = 0.5  --> 1
+function toUnsignedBinaryString(dec : number) : string {
+    let bin_array : number[] = []
+    let quotient : number = dec
+    let no_fraction : number
+
+    while (true) {
+        quotient /= 2
+        no_fraction = Math.floor(quotient)
+        if (quotient > no_fraction)
+            bin_array.insertAt(0, 1)
+        else
+            bin_array.insertAt(0, 0)
+        if (no_fraction == 0) break
+    }
+
+    return '0b' + 
+           bin_array.map(
+               (value: number, index: number) => 
+               { return value.toString(); }
+               ).join('')
+}
+```
+
+##### Finite bit width   
+
+##### Signed integers
+
+Present  
+
+##### IEEE 754 floating point  
 
 #### 2. Apply
 [[toc](#table-of-contents)]
+
+(Challenge) Derive via 1s-, then 2s-complement  
+
 
 #### 3. Present
 [[toc](#table-of-contents)]
