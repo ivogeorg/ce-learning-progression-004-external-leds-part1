@@ -132,6 +132,12 @@ Addition & shift
 #### 1. Study
 [[toc](#table-of-contents)]
 
+##### Central processing unit (CPU)
+
+##### Instruction set
+
+##### Minimal instruction set CPU
+
 [F-4 MISC](http://www.dakeng.com/misc.html)  
      
 The instruction set for the F-4 (fast 4), a proof-of-concept minimal instruction set CPU, is listed below.  Each instruction has several addressing modes. Note that the mnemonics are borrowed from the venerable Motorola SY6502, used in the old 8-bit Nintendo, among other machines.  There is only one "A" register or accumulator, and a program counter.
@@ -151,12 +157,15 @@ STApc PC | 01 00 | null operand | A --> PC | 3
   
 The four instructions can be summarized as Load, Store, Add, and Branch if Overflow Set.  Each memory operation is assumed to take one clock, and ALU operations take one clock also.  ALU (Arithmetic and Logic Unit) is something of a misnomer here, since this chip can only add.  For example, "ADD addr" takes four clocks, two to fetch the instruction and operand, one to read the memory, and one more to do the addition.
 
+##### micro:bit hex files
+
+
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`  
-2. `[<lernact-prac>]`  
-3. `[<lernact-prac>]`  
+1. `[<lernact-prac>]`Reading program lines in binary.  
+2. `[<lernact-prac>]`Clock cycles for a program.    
+3. `[<lernact-prac>]`**[Optional challenge, max 10 extra step points]** Write a function in F-4 MISC assembly.  
 
 #### 3. Present
 [[toc](#table-of-contents)]
