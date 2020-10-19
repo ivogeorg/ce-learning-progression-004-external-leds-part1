@@ -202,13 +202,40 @@ The signed integer is also a primitive type.
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`  
-2. `[<lernact-prac>]`  
-3. `[<lernact-prac>]`**[Optional challenge, max 10 extra step points]** Derive signed integers via 1s-, then 2s-complement  
-
+1. `[<lernact-prac>]`Explain in detail (line by line) what the function in Example 1.1.1 does and why.    
+2. `[<lernact-prac>]`Write a function that converts a _binary pattern string_, like `01011001`, to a decimal number (which will be 89 in this case).  _Hint: Sum of powers of the base, with a judicious choice of [string methods](https://www.tutorialspoint.com/typescript/typescript_strings.htm), which can be found under the **Text** bar in the **Advanced** section of the MakeCode menu._  
+3. `[<lernact-prac>]`**[Optional challenge, max 10 extra step points]** Write the following functions:
+   1. `asUnsigned` to interpret an 8-bit binary pattern string as an unsigned integer and return the decimal equivalent.  
+   2. `asOnesComp` to interpret an 8-bit binary pattern string as a 1s-complement signed integer and return the decimal equivalent.  
+   3. `asTwosComp` to interpret an 8-bit binary pattern string as a 2s-complement signed integer and return the decimal equivalent.  
+   4. `asUnsignedAny` to interpret a binary pattern string of arbitrary bit length as an unsigned integer and return the decimal equivalent.  
+   5. `asOnesCompAny` to interpret a binary pattern string of arbitrary bit length as a 1s-complement signed integer and return the decimal equivalent. _Note: You will need to assume that the bit width is the smallest power of 2 larger or equal to the number of bits in the argument. You will need to read up on [sign extension](https://en.wikipedia.org/wiki/Sign_extension)._      
+   6. `asTwosCompAny` to interpret a binary pattern string of arbitrary bit length as a 2s-complement signed integer and return the decimal equivalent. _See the note above._    
 
 #### 3. Present
 [[toc](#table-of-contents)]
+
+In the [programs](programs) directory:
+1. Add your program from 1.2.2 with filename `microbit-program-1-2-2.js`.  
+2. Add your program from 1.2.3 with filename `microbit-program-1-2-3.js`.  
+
+In the [Lab Notebook](README.md):
+
+1. Answer question 1.1.1.  
+2. Answer question 1.1.2.  
+3. Answer question 1.1.3.  
+4. Answer question 1.1.4.  
+5. Answer question 1.1.5.  
+6. Answer question 1.1.6.  
+7. Answer question 1.1.7.  
+8. Answer question 1.1.8.  
+9. Answer question 1.1.9.  
+10. Answer question 1.1.10.  
+11. Write you narrative for the program explanation from 1.2.1.  
+12. Link to the program from 1.2.2.  
+13. Link to a demo video showing the execution of the program from 1.2.2.  
+14. Link to the program from 1.2.3.  
+15. Link to a demo video showing the execution of the program from 1.2.3.  
 
 
 ### Step 2: Data & memory  
