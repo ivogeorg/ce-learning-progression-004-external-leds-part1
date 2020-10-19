@@ -158,7 +158,7 @@ Finite bit-width means a limit on the largest number that can be represented. If
 
 ##### Primitive data types revisited
 
-The unsigned integer is one of the `[<cept>]`_primitive_ data types, along with _signed integers_, _floating-point numbes_, and _booleans_. A data type is primitive if it is represented in a `[<cept>]`[_word_](https://en.wikipedia.org/wiki/Word_(computer_architecture)). More on this when we tackle memory addressing in a later step.
+The unsigned integer is one of the `[<cept>]`_primitive_ data types, along with _signed integers_, _floating-point numbes_, and _booleans_. A data type is primitive if it is represented in a `[<cept>]`[_word_](https://en.wikipedia.org/wiki/Word_(computer_architecture)). More on this when we tackle memory addressing and processor arithmetic in later steps.
 
 **Question 1.1.8:** What is the word size of the micro:bit? _Hint: There are three ways to tell: (i) Reread the last two sections carefully; (ii) In the Wikipedia page, look at the table and find ARMv6-M, the architecture of the micro:bit processor; and (iii) Skim-read the [hardware overview](https://tech.microbit.org/hardware/1-5-revision/) documentation page for the micro:bit._  
 
@@ -255,11 +255,15 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
+##### Arrays and memory
+
 ##### Memory layout  
 
 ##### Addressing  
 
-##### Addressing modes  
+##### Random access
+
+##### Processor addressing modes  
 
 #### 2. Apply
 [[toc](#table-of-contents)]
@@ -280,11 +284,15 @@ In the [Lab Notebook](README.md):
 
 ##### Addition
 
+##### Subtraction in 2s complement
+
 ##### Shifting   
 
 ##### Multiplication
 
 Addition & shift  
+
+##### Instruction set architecture
 
 #### 2. Apply
 [[toc](#table-of-contents)]
@@ -305,7 +313,9 @@ Addition & shift
 
 ##### Central processing unit (CPU)
 
-##### Instruction set
+##### Load and store
+
+##### Branching revisited
 
 ##### Minimal instruction set CPU
 
@@ -314,7 +324,7 @@ Addition & shift
 The instruction set for the F-4 (fast 4), a proof-of-concept minimal instruction set CPU, is listed below.  Each instruction has several addressing modes. Note that the mnemonics are borrowed from the venerable Motorola SY6502, used in the old 8-bit Nintendo, among other machines.  There is only one "A" register or accumulator, and a program counter.
 
 **F-4 MISC 16 bit instruction set**
-instruction | opcode | operand | operation | clocks
+Instruction | Opcode | Operand | Operation | Clocks
 --- | --- | --- | --- | ---
 ADDi imm | 00 01 | 16 bit value | imm+(A) --> A | 3
 ADDm addr | 00 02 | 16 bit address | (addr)+(A) --> A | 4
@@ -334,8 +344,8 @@ The four instructions can be summarized as Load, Store, Add, and Branch if Overf
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`Reading program lines in binary.  
-2. `[<lernact-prac>]`Clock cycles for a program.    
+1. `[<lernact-prac>]`Decoding instruction binary patterns. Reading program lines in binary.  
+2. `[<lernact-prac>]`Counting clock cycles for a program.    
 3. `[<lernact-prac>]`**[Optional challenge, max 10 extra step points]** Write a function in F-4 MISC assembly.  
 
 #### 3. Present
