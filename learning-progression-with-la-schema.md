@@ -211,6 +211,7 @@ The signed integer is also a primitive type.
    4. `asUnsignedAny` to interpret a binary pattern string of arbitrary bit length as an unsigned integer and return the decimal equivalent.  
    5. `asOnesCompAny` to interpret a binary pattern string of arbitrary bit length as a 1s-complement signed integer and return the decimal equivalent. _Note: You will need to assume that the bit width is the smallest power of 2 larger or equal to the number of bits in the argument. You will need to read up on [sign extension](https://en.wikipedia.org/wiki/Sign_extension)._      
    6. `asTwosCompAny` to interpret a binary pattern string of arbitrary bit length as a 2s-complement signed integer and return the decimal equivalent. _See the note above._    
+4. `[<lernact-prac>]`**[Optional challenge, max 3 extra step points]** Write a function `toScientific` that takes a real number and shows (that is, scrolls) it on the micro:bit screen in decimal scientific notation.
 
 #### 3. Present
 [[toc](#table-of-contents)]
@@ -218,6 +219,7 @@ The signed integer is also a primitive type.
 In the [programs](programs) directory:
 1. Add your program from 1.2.2 with filename `microbit-program-1-2-2.js`.  
 2. Add your program from 1.2.3 with filename `microbit-program-1-2-3.js`.  
+3. Add your program from 1.2.4 with filename `microbit-program-1-2-3.js`.  
 
 In the [Lab Notebook](README.md):
 
@@ -236,6 +238,8 @@ In the [Lab Notebook](README.md):
 13. Link to a demo video showing the execution of the program from 1.2.2.  
 14. Link to the program from 1.2.3.  
 15. Link to a demo video showing the execution of the program from 1.2.3.  
+16. Link to the program from 1.2.4.  
+17. Link to a demo video showing the execution of the program from 1.2.4.  
 
 
 ### Step 2: Data & memory  
