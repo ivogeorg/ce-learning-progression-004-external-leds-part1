@@ -168,10 +168,10 @@ The unsigned integer is one of the `[<cept>]`_primitive_ data types, along with 
 
 **Question 1.1.8:** How many different numbers can we represent with 4-bit binary patterns?  
 
-There are several ways we can represent negative numbers. Here are examples with 4-bit numbers:
+There are several [ways](https://en.wikipedia.org/wiki/Signed_number_representations) we can represent negative numbers. Here are examples with 4-bit numbers:
 1. _Sign and value._ For example, if `0b0011` represents <img src="https://render.githubusercontent.com/render/math?math=%2B 3">, then  <img src="https://render.githubusercontent.com/render/math?math=- 3"> will be represented by `0b1011`. The leftmost bit is used as a sign, with 0 representing + and 1 representing -. The problem with this representation is that it complicates computer arithmetic in `[<cept>]`_hardware_.      
-2. _1-s complement_. For example, <img src="https://render.githubusercontent.com/render/math?math=- 3"> will be represented by `0b1100`. The bits are just flipped. The problem with this representation is that it ends up with two different zeros: `0b0000` represents <img src="https://render.githubusercontent.com/render/math?math=%2B 0"> and `0b1111` represents <img src="https://render.githubusercontent.com/render/math?math=- 0">.  
-3. _2-s complement_. This is the representation of choice for modern computers because it eliminates the problems of the previous two. For example, <img src="https://render.githubusercontent.com/render/math?math=- 3"> is represented by `0b1101`.
+2. _One's complement_. For example, <img src="https://render.githubusercontent.com/render/math?math=- 3"> will be represented by `0b1100`. The bits are just flipped. The problem with this representation is that it ends up with two different zeros: `0b0000` represents <img src="https://render.githubusercontent.com/render/math?math=%2B 0"> and `0b1111` represents <img src="https://render.githubusercontent.com/render/math?math=- 0">.  
+3. [_Two's complement_](https://en.wikipedia.org/wiki/Two%27s_complement). This is the representation of choice for modern computers because it eliminates the problems of the previous two. For example, <img src="https://render.githubusercontent.com/render/math?math=- 3"> is represented by `0b1101`.  
 
 Here is a short table of 2-bit numbers in decimal and the three binary representations (not that with 2 bits we can represents only 4 different numbers):
 Decimal | Sign and value | 1s complement | 2s complement
@@ -197,7 +197,7 @@ The signed integer is also a primitive type.
 2. The `[<cept>]`_single-precision_ floating point is a primitive type, represented in a 32 bits. The `[<cept>]`_double-precision_ floating point is a primitive type, represented in 64 bits.  
 3. In either precision, the bit pattern is split in 3 sections, representing (bit widths shown for single-precision):
    1. (1 bit) The sign, either 0 (+) or 1 (-). For the first binary example above, this bit will be 1.    
-   2. (8 bits). The `[<cept>]`_exponent_ (that is, the power). The exponent is represented in a `[<cept>]`_biased_ form where 127 is added to the actual exponent (aka _excess-127_). In the first binary example, the 8-bit exponent in our example above will be <img src="https://render.githubusercontent.com/render/math?math=127_{10} %2B 2_{10} = 129_{10} = 10000001_{2}">. This biased form converts the signed number representing the exponent (we saw that the exponent can be negative and non-negative) into an unsigned number, which helps with `[<cept>]`_sorting_ floating-point numbers.  
+   2. (8 bits). The `[<cept>]`_exponent_ (that is, the power). The exponent is represented in a `[<cept>]`_offset_ form (aka `[<cept>]`_excess_, aka `[<cept>]`_bias_) where 127 is added to the actual exponent (aka _excess-127_). In the first binary example, the 8-bit exponent in our example above will be <img src="https://render.githubusercontent.com/render/math?math=127_{10} %2B 2_{10} = 129_{10} = 10000001_{2}">. This offset form converts the signed number representing the exponent (we saw that the exponent can be both negative and non-negative) into an unsigned number, which helps with `[<cept>]`_sorting_ floating-point numbers.  
    3. (23 bits) The `[<cept>]`_significand_ (aka `[<cept>]`_mantissa_), which consists of the bits _after_ the `[<cept>]`_binary point_ (aka fractional point). In the first binary example, the fractional bit pattern is going to be `01011000000000000000000`. Note that because in scientific notation a binary number always has a 1 bit to the left of the fractional point, it is omitted from the representation.    
 4. Floating-point numbers are `[<cept>]`_inexact_. Because the significand has only 23 bits, any further precision is lost and rounded. Real numbers are `[<cept>]`_uncountably infinite_, but we can only represent a finite number of them.  
 
@@ -263,14 +263,15 @@ In the [Lab Notebook](README.md):
 
 ##### Random access
 
-##### Processor addressing modes  
-
 #### 2. Apply
 [[toc](#table-of-contents)]
 
 1. `[<lernact-prac>]`  
 2. `[<lernact-prac>]`  
-3. `[<lernact-prac>]`  
+3. `[<lernact-prac>]`**[Optional challenge, max 10 extra step points]** Array class of `Raindrop` objects... ?    
+   1. Object memory footprint.  
+   2. Memory alignment.  
+   3. Calculation of array element addresses.  
 
 #### 3. Present
 [[toc](#table-of-contents)]
@@ -291,15 +292,17 @@ In the [Lab Notebook](README.md):
 ##### Multiplication
 
 Addition & shift  
+2 2-bit numbers as an example  
 
 ##### Instruction set architecture
 
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`  
-2. `[<lernact-prac>]`  
-3. `[<lernact-prac>]`**[Optional challenge, max 10 extra step points]** Multiplication of two 16-bit numbers on an 8-bit processor  
+1. `[<lernact-prac>]`Perform the operation <img src="https://render.githubusercontent.com/render/math?math=101_{10} - 37_{10}"> in decimal and 2s-complement binary. Show that the results match.      
+2. `[<lernact-prac>]`Perform the operation <img src="https://render.githubusercontent.com/render/math?math=01010110_{2} * 2_{10}"> in binary. Show that it is equivalent to a shift. Specify the type (that is, _direction_ and _bit-distance_) of the shift.  
+3. `[<lernact-prac>]`Perform the multiplication of two 3-bit numbers, `0b110` and `0b101`, in a table showing each step.    
+4. `[<lernact-prac>]`**[Optional challenge, max 10 extra step points]** Multiplication of two 16-bit numbers on an 8-bit processor **TODO: set up**  
 
 #### 3. Present
 [[toc](#table-of-contents)]
@@ -313,9 +316,13 @@ Addition & shift
 
 ##### Central processing unit (CPU)
 
+##### Processor addressing modes  
+
 ##### Load and store
 
 ##### Branching revisited
+
+##### Status bits
 
 ##### Minimal instruction set CPU
 
