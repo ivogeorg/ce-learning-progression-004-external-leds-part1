@@ -169,9 +169,9 @@ The unsigned integer is one of the `[<cept>]`_primitive_ data types, along with 
 **Question 1.1.8:** How many different numbers can we represent with 4-bit binary patterns?  
 
 There are several ways we can represent negative numbers. Here are examples with 4-bit numbers:
-1. Sign and value. For example, if `0b0011` represents <img src="https://render.githubusercontent.com/render/math?math=%2B 3">, then  <img src="https://render.githubusercontent.com/render/math?math=- 3"> will be represented by `0b1011`. The leftmost bit is used as a sign, with 0 representing + and 1 representing -. The problem with this representation is that it complicates computer arithmetic in `[<cept>]`_hardware_.      
-2. 1-s complement. For example, <img src="https://render.githubusercontent.com/render/math?math=- 3"> will be represented by `0b1100`. The bits are just flipped. The problem with this representation is that it ends up with two different zeros: `0b0000` represents <img src="https://render.githubusercontent.com/render/math?math=%2B 0"> and `0b1111` represents <img src="https://render.githubusercontent.com/render/math?math=- 0">.  
-3. 2-s complement. This is the representation of choice for modern computers because it eliminates the problems of the previous two. For example, <img src="https://render.githubusercontent.com/render/math?math=- 3"> is represented by `0b1101`.
+1. _Sign and value._ For example, if `0b0011` represents <img src="https://render.githubusercontent.com/render/math?math=%2B 3">, then  <img src="https://render.githubusercontent.com/render/math?math=- 3"> will be represented by `0b1011`. The leftmost bit is used as a sign, with 0 representing + and 1 representing -. The problem with this representation is that it complicates computer arithmetic in `[<cept>]`_hardware_.      
+2. _1-s complement_. For example, <img src="https://render.githubusercontent.com/render/math?math=- 3"> will be represented by `0b1100`. The bits are just flipped. The problem with this representation is that it ends up with two different zeros: `0b0000` represents <img src="https://render.githubusercontent.com/render/math?math=%2B 0"> and `0b1111` represents <img src="https://render.githubusercontent.com/render/math?math=- 0">.  
+3. _2-s complement_. This is the representation of choice for modern computers because it eliminates the problems of the previous two. For example, <img src="https://render.githubusercontent.com/render/math?math=- 3"> is represented by `0b1101`.
 
 Here is a short table of 2-bit numbers in decimal and the three binary representations (not that with 2 bits we can represents only 4 different numbers):
 Decimal | Sign and value | 1s complement | 2s complement
@@ -189,12 +189,16 @@ The signed integer is also a primitive type.
 ##### IEEE 754 floating point  
 
 `[<lernact-rd>]`There are many different ways to represent `[<cept>]`_real_ numbers in binary, but the established standard is the [IEEE 754 format](https://en.wikipedia.org/wiki/Single-precision_floating-point_format). The full coverage of this standard is beyond the scope of this learning progression, but we need to understand the most important elements:
-1. The standard is based on the `[<cept>]`[_scientific notation_](https://www.mathsisfun.com/numbers/scientific-notation.html) for real numbers. For example, the decimal real number <img src="https://render.githubusercontent.com/render/math?math=- 300.498"> will be written as follows in scientific notation <img src="https://render.githubusercontent.com/render/math?math=- 3.00489 * 10^2">. For binary, analogously, the number <img src="https://render.githubusercontent.com/render/math?math=- 101.011"> will be written as follow in scientific notation <img src="https://render.githubusercontent.com/render/math?math=- 1.01011 * 2^2">. Finally, the number <img src="https://render.githubusercontent.com/render/math?math=0.00010101"> will be represented in scientic notation as follows <img src="https://render.githubusercontent.com/render/math?math=1.0101 * 2^{-4}">. _Note that, for clarity, we write the base and power in decimal._  
-2. The `[<cept>]`_single-precision_ floating point is a primitive type, represented in a 32-bit pattern. The `[<cept>]`_double-precision_ floating point is a primitive type, represented in a 64-bit pattern.  
-3. In either precision, the bit pattern is split in 3 sections, representing:
+1. The standard is based on the `[<cept>]`[_scientific notation_](https://www.mathsisfun.com/numbers/scientific-notation.html) for real numbers. For example t
+   1. The decimal real number <img src="https://render.githubusercontent.com/render/math?math=- 300.498"> will be written in scientific notation as <img src="https://render.githubusercontent.com/render/math?math=- 3.00489 * 10^2">. 
+   2. For binary, analogously, the number <img src="https://render.githubusercontent.com/render/math?math=- 101.011"> will be written as follow in scientific notation <img src="https://render.githubusercontent.com/render/math?math=- 1.01011 * 2^2">. _Note that, for clarity, we write the base and power in decimal._   
+   3. Finally, the number <img src="https://render.githubusercontent.com/render/math?math=0.00010101"> will be represented in scientic notation as follows <img src="https://render.githubusercontent.com/render/math?math=1.0101 * 2^{-4}">. _Note that, for clarity, we write the base and power in decimal._  
+2. The type is called "floating point" precisely because the exponent can take a large range of signed integers, as shown in the examples above.  
+2. The `[<cept>]`_single-precision_ floating point is a primitive type, represented in a 32 bits. The `[<cept>]`_double-precision_ floating point is a primitive type, represented in 64 bits.  
+3. In either precision, the bit pattern is split in 3 sections, representing (bit widths shown for single-precision):
    1. (1 bit) The sign, either 0 (+) or 1 (-). For the first binary example above, this bit will be 1.    
    2. (8 bits). The `[<cept>]`_exponent_ (that is, the power). The exponent is represented in a `[<cept>]`_biased_ form where 127 is added to the actual exponent (aka _excess-127_). In the first binary example, the 8-bit exponent in our example above will be <img src="https://render.githubusercontent.com/render/math?math=127_{10} %2B 2_{10} = 129_{10} = 10000001_{2}">. This biased form converts the signed number representing the exponent (we saw that the exponent can be negative and non-negative) into an unsigned number, which helps with `[<cept>]`_sorting_ floating-point numbers.  
-   3. (23 bits) The `[<cept>]`_significand_ (aka `[<cept>]`_mantissa_), which consists of the bits _after_ the `[<cept>]`_binary point_ (aka fractional point). In the first binary example, this is going to be `01011000000000000000000`.  
+   3. (23 bits) The `[<cept>]`_significand_ (aka `[<cept>]`_mantissa_), which consists of the bits _after_ the `[<cept>]`_binary point_ (aka fractional point). In the first binary example, the fractional bit pattern is going to be `01011000000000000000000`. Note that because in scientific notation a binary number always has a 1 bit to the left of the fractional point, it is omitted from the representation.    
 4. Floating-point numbers are `[<cept>]`_inexact_. Because the significand has only 23 bits, any further precision is lost and rounded. Real numbers are `[<cept>]`_uncountably infinite_, but we can only represent a finite number of them.  
 
 **Question 1.1.10:** Why would it be easier to sort binary floating-point numbers with the exponent represented as an _unsigned integer_ rather than a _signed integer_? _Hint: In an ascending order, 0 sorts above 1, but signed integers that start with 1 are all smaller than any signed integer that starts with 0._
@@ -204,13 +208,16 @@ The signed integer is also a primitive type.
 
 1. `[<lernact-prac>]`Explain in detail (line by line) what the function in Example 1.1.1 does and why.    
 2. `[<lernact-prac>]`Write a function that converts a _binary pattern string_, like `01011001`, to a decimal number (which will be 89 in this case).  _Hint: Sum of powers of the base, with a judicious choice of [string methods](https://www.tutorialspoint.com/typescript/typescript_strings.htm), which can be found under the **Text** bar in the **Advanced** section of the MakeCode menu._  
-3. `[<lernact-prac>]`**[Optional challenge, max 10 extra step points]** Write the following functions:
-   1. `asUnsigned` to interpret an 8-bit binary pattern string as an unsigned integer and return the decimal equivalent.  
-   2. `asOnesComp` to interpret an 8-bit binary pattern string as a 1s-complement signed integer and return the decimal equivalent.  
-   3. `asTwosComp` to interpret an 8-bit binary pattern string as a 2s-complement signed integer and return the decimal equivalent.  
-   4. `asUnsignedAny` to interpret a binary pattern string of arbitrary bit length as an unsigned integer and return the decimal equivalent.  
-   5. `asOnesCompAny` to interpret a binary pattern string of arbitrary bit length as a 1s-complement signed integer and return the decimal equivalent. _Note: You will need to assume that the bit width is the smallest power of 2 larger or equal to the number of bits in the argument. You will need to read up on [sign extension](https://en.wikipedia.org/wiki/Sign_extension)._      
-   6. `asTwosCompAny` to interpret a binary pattern string of arbitrary bit length as a 2s-complement signed integer and return the decimal equivalent. _See the note above._    
+3. `[<lernact-prac>]`**[Optional challenge, max 10 extra step points]** Write a program with the following functions and types:
+   1. Function `asUnsigned` to interpret an 8-bit binary pattern string as an unsigned integer and return the decimal equivalent.  
+   2. Function `asOnesComp` to interpret an 8-bit binary pattern string as a 1s-complement signed integer and return the decimal equivalent.  
+   3. Function `asTwosComp` to interpret an 8-bit binary pattern string as a 2s-complement signed integer and return the decimal equivalent.  
+   4. Function `asUnsignedAny` to interpret a binary pattern string of arbitrary bit length as an unsigned integer and return the decimal equivalent.  
+   5. Function `asOnesCompAny` to interpret a binary pattern string of arbitrary bit length as a 1s-complement signed integer and return the decimal equivalent. _Note: You will need to assume that the bit width is the smallest power of 2 larger or equal to the number of bits in the argument. You will need to read up on [sign extension](https://en.wikipedia.org/wiki/Sign_extension)._      
+   6. Function `asTwosCompAny` to interpret a binary pattern string of arbitrary bit length as a 2s-complement signed integer and return the decimal equivalent. _See the note above._    
+   7. Enumerated type `NumberRep` for the three different representations: `Unsigned`, `OnesComp`, and `TwosComp`.  
+   8. Enumerated type `BitWidth` for the two cases of bit width in the above functions: `8` and `Any`.  
+   9. Function `interpretBinary (pattern : string, repr : NumberRep, width : BitWidth)` to collect all functions in one.  
 4. `[<lernact-prac>]`**[Optional challenge, max 3 extra step points]** Write a function `toScientific` that takes a real number and shows (that is, scrolls) it on the micro:bit screen in decimal scientific notation.
 
 #### 3. Present
