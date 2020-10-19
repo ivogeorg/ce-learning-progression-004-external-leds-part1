@@ -50,10 +50,57 @@ This progression introduces fundamentals of computing, including the binary syst
 #### 1. Study
 [[toc](#table-of-contents)]
 
+##### Positional numeral systems
+
+`[<lernact-rd>]`The most widely used number system is `[<cept>]`_decimal_. What does "decimal" actually mean? Let us list the obvious:
+1. [Decimal](https://www.etymonline.com/word/decimal) means 10.  
+2. The decimal system has 10 symbols, called `[<cept>]`_digits_: 0, 1, 2, 3, 4, 5, 6, 7, 8, 8, 9.  
+3. It's popularity tends to be attributed to the fact that humans have 10 digits on their hands and they learned to count on them in prehistoric times.  
+
+Some aspects that are less obvious (mostly because they are so deeply habitual) are:
+1. The name "decimal" indicates the `[<cept>]`_base_ of the number system, which is 10. Note that the base is the _highest digit plus 1_.    
+2. Every number expresses a sum of `[<cept>]`_powers_ of the `[<cept>]`_base_ 10. For example, the number 359 unequivocally means _three-hundred-and-fifty-nine_, or <img src="https://render.githubusercontent.com/render/math?math=3 * 10^2 %2B 5 * 10^1 %2B 9 * 10^0">. Any decimal number can be expressed like this. Note that any number raised to the power 0 is, by definition, equal to 1.  
+3. The powers of the base are equal to the indices of the digit positions, counting _from right to left starting at 0_. For example, 
+   ```
+   Digits     359
+   Indices    210
+   ```
+   The position of a digit immediately tells us whether it represents _ten-thousands_, _thousands_, _hundreds_ (or _centuries_), _tens_ (or _decades_), or _ones_.  
+
+What all this means is that the decimal number (aka `[<cept>]`_numeral_) system is just one example of `[<cept>]`_positional_ number systems. In contrast, the [Roman numeral system](https://en.wikipedia.org/wiki/Roman_numerals) is _not_ positional. For example, consider the numbers <img src="https://render.githubusercontent.com/render/math?math=IX"> (9 in decimal) and <img src="https://render.githubusercontent.com/render/math?math=XI"> (11 in decimal).
+
+The `[<cept>]`[_binary_](https://en.wikipedia.org/wiki/Binary_number) number system (_binary_, for short) is another positional numeral system.
+
+**Question 1.1.1:** What is the base of binary?  
+**Question 1.1.2:** What are the symbols of binary? How are they called?     
+**Question 1.1.3:** Express the binary number <img src="https://render.githubusercontent.com/render/math?math=10101"> as a sum of powers of the base?  
+**Question 1.1.4:** What does <img src="https://render.githubusercontent.com/render/math?math=10"> represent in binary?  
+
 ##### Unsigned integers
 
-`[<lernact-rd>]`
+`[<lernact-rd>]`The simplest data type in computing is the `[<cept>]`_unsigned integer_. "Unsigned" means `[<cept>]`_non-negative_. "Integer" means `[<cept>]`_whole number_. Here are the first 16 unsigned integers, in both decimal and binary:
+Decimal | Binary
+-- | --
+<img src="https://render.githubusercontent.com/render/math?math=0_{10}"> | <img src="https://render.githubusercontent.com/render/math?math=0_{2}">
+<img src="https://render.githubusercontent.com/render/math?math=1_{10}"> | <img src="https://render.githubusercontent.com/render/math?math=1_{2}">
+<img src="https://render.githubusercontent.com/render/math?math=2_{10}"> | <img src="https://render.githubusercontent.com/render/math?math=10_{2}">
+<img src="https://render.githubusercontent.com/render/math?math=3_{10}"> | <img src="https://render.githubusercontent.com/render/math?math=11_{2}">
+<img src="https://render.githubusercontent.com/render/math?math=4_{10}"> | <img src="https://render.githubusercontent.com/render/math?math=100_{2}">
+<img src="https://render.githubusercontent.com/render/math?math=5_{10}"> | <img src="https://render.githubusercontent.com/render/math?math=101_{2}">
+<img src="https://render.githubusercontent.com/render/math?math=6_{10}"> | <img src="https://render.githubusercontent.com/render/math?math=110_{2}">
+<img src="https://render.githubusercontent.com/render/math?math=7_{10}"> | <img src="https://render.githubusercontent.com/render/math?math=111_{2}">
+<img src="https://render.githubusercontent.com/render/math?math=8_{10}"> | <img src="https://render.githubusercontent.com/render/math?math=1000_{2}">
+<img src="https://render.githubusercontent.com/render/math?math=9_{10}"> | <img src="https://render.githubusercontent.com/render/math?math=1001_{2}">
+<img src="https://render.githubusercontent.com/render/math?math=10_{10}"> | <img src="https://render.githubusercontent.com/render/math?math=1010_{2}">
+<img src="https://render.githubusercontent.com/render/math?math=11_{10}"> | <img src="https://render.githubusercontent.com/render/math?math=1011_{2}">
+<img src="https://render.githubusercontent.com/render/math?math=12_{10}"> | <img src="https://render.githubusercontent.com/render/math?math=1100_{2}">
+<img src="https://render.githubusercontent.com/render/math?math=13_{10}"> | <img src="https://render.githubusercontent.com/render/math?math=1101_{2}">
+<img src="https://render.githubusercontent.com/render/math?math=14_{10}"> | <img src="https://render.githubusercontent.com/render/math?math=1110_{2}">
+<img src="https://render.githubusercontent.com/render/math?math=15_{10}"> | <img src="https://render.githubusercontent.com/render/math?math=1111_{2}">
 
+In programming, a binary number is written with the prefix `0b`. For example, `0b1` and `0b0001` both represent <img src="https://render.githubusercontent.com/render/math?math=1_{2}">. 
+
+**Question 1.1.5:** What are the `[<cept>]`_bit patterns_ for <img src="https://render.githubusercontent.com/render/math?math=333_{10}">, <img src="https://render.githubusercontent.com/render/math?math=1000000_{10}">, and <img src="https://render.githubusercontent.com/render/math?math=17181920_{10}">? Use the following function on the micro:bit simulator and/or device:
 ```javascript
 // Example 1.1.1
 
@@ -94,11 +141,63 @@ function toUnsignedBinaryString(dec : number) : string {
 
 ##### Finite bit width   
 
+`[<lernact-rd>]`A bit pattern of _any length_ can represent an unsigned integer. However, computers represent unsigned integers of `[<cept>]`_fixed bit width_, which is a power of 2. The most widely used bit widths are 8, 16, 32, 64, and 128. For example, here is the number <img src="https://render.githubusercontent.com/render/math?math=172_{10}"> in 8 bits, 16 bits, and 32 bits:
+Bit width | Bit pattern
+-- | --
+8 | `0b10101100`
+16 | `0b0000000010101100`
+32 | `0b00000000000000000000000010101100`
+
+The micro:bit has 32-bit unsigned integers.
+
+**Question 1.1.6:** What is the bit pattern of the largest unsigned integer that can be represented in the micro:bit?  
+
+Finite bit-width means a limit on the largest number that can be represented. If a number is larger than the largest number that can be represented in the available number of bits, it `[<cept>]`_overflows_.
+
+**Question 1.1.7:** Will <img src="https://render.githubusercontent.com/render/math?math=653_{10}"> overflow in 8-bit binary?   
+
+##### Primitive data types revisited
+
+The unsigned integer is one of the `[<cept>]`_primitive_ data types, along with _signed integers_, _floating-point numbes_, and _booleans_. A data type is primitive if it is represented in a `[<cept>]`[_word_](https://en.wikipedia.org/wiki/Word_(computer_architecture)). More on this when we tackle memory addressing in a later step.
+
+**Question 1.1.8:** What is the word size of the micro:bit? _Hint: There are three ways to tell: (i) Reread the last two sections carefully; (ii) In the Wikipedia page, look at the table and find ARMv6-M, the architecture of the micro:bit processor; and (iii) Skim-read the [hardware overview](https://tech.microbit.org/hardware/1-5-revision/) documentation page for the micro:bit._  
+
 ##### Signed integers
 
-Present  
+`[<lernact-rd>]``[<cept>]`_Signed integers_ are integers that can be negative and non-negative.
+
+**Question 1.1.8:** How many different numbers can we represent with 4-bit binary patterns?  
+
+There are several ways we can represent negative numbers. Here are examples with 4-bit numbers:
+1. Sign and value. For example, if `0b0011` represents <img src="https://render.githubusercontent.com/render/math?math=%2B 3">, then  <img src="https://render.githubusercontent.com/render/math?math=- 3"> will be represented by `0b1011`. The leftmost bit is used as a sign, with 0 representing + and 1 representing -. The problem with this representation is that it complicates computer arithmetic in `[<cept>]`_hardware_.      
+2. 1-s complement. For example, <img src="https://render.githubusercontent.com/render/math?math=- 3"> will be represented by `0b1100`. The bits are just flipped. The problem with this representation is that it ends up with two different zeros: `0b0000` represents <img src="https://render.githubusercontent.com/render/math?math=%2B 0"> and `0b1111` represents <img src="https://render.githubusercontent.com/render/math?math=- 0">.  
+3. 2-s complement. This is the representation of choice for modern computers because it eliminates the problems of the previous two. For example, <img src="https://render.githubusercontent.com/render/math?math=- 3"> is represented by `0b1101`.
+
+Here is a short table of 2-bit numbers in decimal and the three binary representations (not that with 2 bits we can represents only 4 different numbers):
+Decimal | Sign and value | 1s complement | 2s complement
+-- | -- | -- | --
+<img src="https://render.githubusercontent.com/render/math?math=%2B 1"> | `0b01` | `0b01` | `0b01`
+<img src="https://render.githubusercontent.com/render/math?math=%2B 0"> | `0b00` | `0b00` | `0b00`
+<img src="https://render.githubusercontent.com/render/math?math=- 0"> | `0b10` | `0b11` | n/a
+<img src="https://render.githubusercontent.com/render/math?math=- 1"> | `0b11` | `0b10` | `0b11`
+<img src="https://render.githubusercontent.com/render/math?math=- 2"> | n/a | n/a | `0b10`
+
+The signed integer is also a primitive type.
+
+**Question 1.1.9:** If we can represent 32 different signed integer numbers, what is the largest negative number that we can represent?  
 
 ##### IEEE 754 floating point  
+
+`[<lernact-rd>]`There are many different ways to represent `[<cept>]`_real_ numbers in binary, but the established standard is the [IEEE 754 format](https://en.wikipedia.org/wiki/Single-precision_floating-point_format). The full coverage of this standard is beyond the scope of this learning progression, but we need to understand the most important elements:
+1. The standard is based on the `[<cept>]`[_scientific notation_](https://www.mathsisfun.com/numbers/scientific-notation.html) for real numbers. For example, the decimal real number <img src="https://render.githubusercontent.com/render/math?math=- 300.498"> will be written as follows in scientific notation <img src="https://render.githubusercontent.com/render/math?math=- 3.00489 * 10^2">. For binary, analogously, the number <img src="https://render.githubusercontent.com/render/math?math=- 101.011"> will be written as follow in scientific notation <img src="https://render.githubusercontent.com/render/math?math=- 1.01011 * 2^2">. Finally, the number <img src="https://render.githubusercontent.com/render/math?math=0.00010101"> will be represented in scientic notation as follows <img src="https://render.githubusercontent.com/render/math?math=1.0101 * 2^{-4}">. _Note that, for clarity, we write the base and power in decimal._  
+2. The `[<cept>]`_single-precision_ floating point is a primitive type, represented in a 32-bit pattern. The `[<cept>]`_double-precision_ floating point is a primitive type, represented in a 64-bit pattern.  
+3. In either precision, the bit pattern is split in 3 sections, representing:
+   1. (1 bit) The sign, either 0 (+) or 1 (-). For the first binary example above, this bit will be 1.    
+   2. (8 bits). The `[<cept>]`_exponent_ (that is, the power). The exponent is represented in a `[<cept>]`_biased_ form where 127 is added to the actual exponent (aka _excess-127_). In the first binary example, the 8-bit exponent in our example above will be <img src="https://render.githubusercontent.com/render/math?math=127_{10} %2B 2_{10} = 129_{10} = 10000001_{2}">. This biased form converts the signed number representing the exponent (we saw that the exponent can be negative and non-negative) into an unsigned number, which helps with `[<cept>]`_sorting_ floating-point numbers.  
+   3. (23 bits) The `[<cept>]`_significand_ (aka `[<cept>]`_mantissa_), which consists of the bits _after_ the `[<cept>]`_binary point_ (aka fractional point). In the first binary example, this is going to be `01011000000000000000000`.  
+4. Floating-point numbers are `[<cept>]`_inexact_. Because the significand has only 23 bits, any further precision is lost and rounded. Real numbers are `[<cept>]`_uncountably infinite_, but we can only represent a finite number of them.  
+
+**Question 1.1.10:** Why would it be easier to sort binary floating-point numbers with the exponent represented as an _unsigned integer_ rather than a _signed integer_? _Hint: In an ascending order, 0 sorts above 1, but signed integers that start with 1 are all smaller than any signed integer that starts with 0._
 
 #### 2. Apply
 [[toc](#table-of-contents)]
