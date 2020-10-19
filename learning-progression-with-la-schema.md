@@ -266,8 +266,8 @@ In the [Lab Notebook](README.md):
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`  
-2. `[<lernact-prac>]`  
+1. `[<lernact-prac>]`Hexadecimal...    
+2. `[<lernact-prac>]`Pointers...    
 3. `[<lernact-prac>]`**[Optional challenge, max 10 extra step points]** Array class of `Raindrop` objects... ?    
    1. Object memory footprint.  
    2. Memory alignment.  
