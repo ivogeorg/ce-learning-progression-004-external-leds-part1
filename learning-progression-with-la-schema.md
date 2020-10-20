@@ -266,12 +266,16 @@ In the [Lab Notebook](README.md):
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`Hexadecimal...    
-2. `[<lernact-prac>]`Pointers...    
-3. `[<lernact-prac>]`**[Optional challenge, max 10 extra step points]** Array class of `Raindrop` objects... ?    
-   1. Object memory footprint.  
-   2. Memory alignment.  
-   3. Calculation of array element addresses.  
+1. `[<lernact-prac>]`Intro to hexadeximal and function `bin2Hex`, converting `0b0001111` to `0x0F`.  **TODO**       
+2. `[<lernact-prac>]`Creating an index to a database:
+   1. 2D array.  
+   2. Array sorted by first column.  
+   3. Create an index array for the second column.  
+3. `[<lernact-prac>]`**[Optional challenge, max 10 extra step points]** Array-based malloc simulation:
+   1. Byte-array simulation.
+   2. Object memory footprint.  
+   3. Memory alignment.  
+   4. Calculation of array element addresses.  
 
 #### 3. Present
 [[toc](#table-of-contents)]
