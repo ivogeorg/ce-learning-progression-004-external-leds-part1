@@ -276,10 +276,11 @@ In the [Lab Notebook](README.md):
    2. You might need to `[<cept>]`_pad_ the argument string. What is padding? If I need a string to be of some particular length (or width for binary number strings), say 8 bits, and I have an input like `0b111`, I can pad this string on the left with `0`-s to get the equivalent 8-bit number strging `0b00000111`.  
    3. The output string should have the prefix for hexadecimal.  
 3. `[<lernact-prac>]`Write a function `hex2Bin(hex : string) : string` which takes a hexadecimal integer string and returns the corresponding binary integer string (e.g. for input `0x0F`, the output is `0b00001111`). Use prefixes.  
-4. `[<lernact-prac>]`**[Optional challenge, max 5 extra step points]**  **TODO: Sketch** Creating an index to a database:
+4. `[<lernact-prac>]`**[Optional challenge, max 5 extra step points]**  **TODO** Creating an index to a database:
    1. 2D array.  
    2. Array sorted by first column.  
    3. Create an index array for the second column.  
+      <img src="images/index-array-into-record-array.png" alt="Index into Record table" width="600" />  
 5. `[<lernact-prac>]`**[Optional challenge, max 10 extra step points]** **TODO: Sketch** Array-based malloc simulation:
    1. Byte-array simulation.
    2. Object memory footprint.  
