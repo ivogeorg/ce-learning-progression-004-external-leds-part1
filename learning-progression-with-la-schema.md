@@ -226,7 +226,7 @@ The signed integer is also a primitive type.
 In the [programs](programs) directory:
 1. Add your program from 1.2.2 with filename `microbit-program-1-2-2.js`.  
 2. Add your program from 1.2.3 with filename `microbit-program-1-2-3.js`.  
-3. Add your program from 1.2.4 with filename `microbit-program-1-2-3.js`.  
+3. Add your program from 1.2.4 with filename `microbit-program-1-2-4.js`.  
 
 In the [Lab Notebook](README.md):
 
@@ -289,6 +289,8 @@ In the [Lab Notebook](README.md):
 
 ##### Addition
 
+Carry  
+
 ##### Subtraction in 2s complement
 
 ##### Shifting   
@@ -298,18 +300,56 @@ In the [Lab Notebook](README.md):
 Addition & shift  
 2 2-bit numbers as an example  
 
+##### Registers
+
 ##### Instruction set architecture
 
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`Perform the operation <img src="https://render.githubusercontent.com/render/math?math=101_{10} - 37_{10}"> in decimal and 2s-complement binary. Show that the results match.      
-2. `[<lernact-prac>]`Perform the operation <img src="https://render.githubusercontent.com/render/math?math=01010110_{2} * 2_{10}"> in binary. Show that it is equivalent to a shift. Specify the type (that is, _direction_ and _bit-distance_) of the shift.  
-3. `[<lernact-prac>]`Perform the multiplication of two 3-bit numbers, `0b110` and `0b101`, in a table showing each step.    
-4. `[<lernact-prac>]`**[Optional challenge, max 10 extra step points]** Multiplication of two 16-bit numbers on an 8-bit processor **TODO: set up**  
+1. `[<lernact-prac>]`Perform _manually_ the operation <img src="https://render.githubusercontent.com/render/math?math=101_{10} - 37_{10}"> in decimal and 2s-complement binary. Show that the results match.    
+2. `[<lernact-prac>]`Write a function `addBin(a : string, b : string) : string` to add two binary unsigned integer strings (e.g. `0b00011` and `0b110`) and output (that is, `return`) the result in the same format. Perform the operation `[<cept>]`_bitwise_ and do not convert to and from decimal. Hints and guidelines:
+   1. Assume you have unbounded bit width. That is, do not worry about overflow.  
+   2. Make sure you align the two strings properly. You might want to `[<cept>]`_pad_ the shorter string, if there is one, before performing the operation.  
+   3. Remember binary addition:  
+      1. 0<sub>2</sub> + 0<sub>2</sub> = 0<sub>2</sub> and no carry.  
+      2. 0<sub>2</sub> + 1<sub>2</sub> = 1<sub>2</sub> and no carry.  
+      3. 1<sub>2</sub> + 0<sub>2</sub> = 1<sub>2</sub> and no carry.  
+      4. 1<sub>2</sub> + 1<sub>2</sub> = 0<sub>2</sub> and carry of 1<sub>2</sub>.  
+3. `[<lernact-prac>]`Perform _manually_ the operation <img src="https://render.githubusercontent.com/render/math?math=01010110_{2} * 2_{10}"> in binary. Show that it is equivalent to a shift. Specify the type (that is, _direction_ and _bit-distance_) of the shift.  
+4. `[<lernact-prac>]`Perform the multiplication of two 3-bit numbers, `0b110` and `0b101`, in a table showing each step.    
+5. `[<lernact-prac>]`**[Optional challenge, max 5 extra step points]** Write a function `mulBin(a : string, b : string) : string` to multiply two binary unsigned integer strings (e.g. `0b00011` and `0b110`) and output (that is, `return`) the result in the same format. Perform the operation bitwise and do not convert to and from decimal. Hints and guidelines:
+   1. Assume you have 8-bit inputs and you have sufficient output bits. _What is the maximum output bit width of the product of two 8-bit unsigned integers?_  
+   2. Make sure you advance your `[<cept>]`_operands_ and `[<cept>]`_accumulator_ properly.    
+   3. Remember binary multiplication:  
+      1. 0<sub>2</sub> * 0<sub>2</sub> = 0<sub>2</sub>.  
+      2. 0<sub>2</sub> * 1<sub>2</sub> = 0<sub>2</sub>.  
+      3. 1<sub>2</sub> * 1<sub>2</sub> = 1<sub>2</sub>.  
+   4. How would you modify, if necessary, the function to work with 2s-complement signed integers?  
+6. `[<lernact-prac>]`**[Optional challenge, max 10 extra step points]** Multiplication of two 16-bit numbers on an 8-bit processor. In particular:
+   1. Modify the function from the previous task to work _with 8-bit registers only_. That is, assume that you your operands, intermediate values, and results cannot exceed 8-bit units, and numbers requiring more bits are broken down and stored in arrays of 8-bit number strings.      
+   2. The function signature should be `mulBin8(a : string[], b : string[], product : string[]) : void`. The parameter `a` will be an array, representing a 16-bit 2s-complement signed integer, in [big-endian](https://www.webopedia.com/TERM/B/big_endian.html) order. So will `b`. The third operand, `product`, will contain the result of the operation, in the same format.  
+   3. Pay special attention to transfering the carry between consecutive bytes of the result, while it is being constructed.  
 
 #### 3. Present
 [[toc](#table-of-contents)]
+
+In the [programs](programs) directory:
+1. Add your program from 3.2.2 with filename `microbit-program-3-2-2.js`.  
+2. Add your program from 3.2.5 with filename `microbit-program-3-2-5.js`.  
+3. Add your program from 3.2.6 with filename `microbit-program-3-2-6.js`.  
+
+In the [Lab Notebook](README.md):
+
+1. Show your work for 3.2.1 in well-formatted Markdown, including whatever images, tables, or other graphical elements you deem necessary.  
+2. Link to the program from 3.2.2.  
+3. Link to a demo video showing the execution of the program from 3.2.2.  
+4. Show your work for 3.2.3 in well-formatted Markdown, including whatever images, tables, or other graphical elements you deem necessary.  
+5. Show your work for 3.2.4 in well-formatted Markdown, including whatever images, tables, or other graphical elements you deem necessary.  
+6. Link to the program from 3.2.5.  
+7. Link to a demo video showing the execution of the program from 3.2.5.  
+8. Link to the program from 3.2.6.  
+9. Link to a demo video showing the execution of the program from 3.2.6.  
 
 
 ### Step 4: Minimal assembly (part 1)  
