@@ -266,12 +266,21 @@ In the [Lab Notebook](README.md):
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`Intro to hexadeximal and function `bin2Hex`, converting `0b0001111` to `0x0F`.  **TODO**       
-2. `[<lernact-prac>]`Creating an index to a database:
+1. `[<lernact-prac>]`The `[<cept>]`_hexadeximal_ number system is frequently used in computing (e.g. the micro:bit HEX files, and to show memory addresses that are too big to show in binary). "Hexadeci-" means 16. Questions and tasks:  
+   1. What is the base of hexadecimal?  
+   2. What are the symbols of hexadecimal? List them.  
+   3. How many bits can represent the same number of different numbers as one `[<cept>]`_hexadigit_?  
+   4. Using your answer to the previous question, describe a simple procedure to convert numbers from binary to hexadecimal, and vice versa.  
+2. `[<lernact-prac>]`Write a function `bin2Hex(bin : string) : string` which takes a binary integer string and returns the corresponding hexadecimal integer string (e.g. for input `0b00001111`, the output is `0x0F`). Guidelines and hints:
+   1. Assume the argument `bin` will have the prefix for binary.  
+   2. You might need to `[<cept>]`_pad_ the argument string. What is padding? If I need a string to be of some particular length (or width for binary number strings), say 8 bits, and I have an input like `0b111`, I can pad this string on the left with `0`-s to get the equivalent 8-bit number strging `0b00000111`.  
+   3. The output string should have the prefix for hexadecimal.  
+3. `[<lernact-prac>]`Write a function `hex2Bin(hex : string) : string` which takes a hexadecimal integer string and returns the corresponding binary integer string (e.g. for input `0x0F`, the output is `0b00001111`). Use prefixes.  
+4. `[<lernact-prac>]`**TODO** Creating an index to a database:
    1. 2D array.  
    2. Array sorted by first column.  
    3. Create an index array for the second column.  
-3. `[<lernact-prac>]`**[Optional challenge, max 10 extra step points]** Array-based malloc simulation:
+5. `[<lernact-prac>]`**[Optional challenge, max 10 extra step points]** Array-based malloc simulation:
    1. Byte-array simulation.
    2. Object memory footprint.  
    3. Memory alignment.  
@@ -279,6 +288,24 @@ In the [Lab Notebook](README.md):
 
 #### 3. Present
 [[toc](#table-of-contents)]
+
+In the [programs](programs) directory:
+1. Add your program from 2.2.2 with filename `microbit-program-2-2-2.js`.  
+2. Add your program from 2.2.3 with filename `microbit-program-2-2-3.js`.  
+3. Add your program from 2.2.4 with filename `microbit-program-2-2-4.js`.  
+4. Add your program from 2.2.5 with filename `microbit-program-2-2-5.js`.  
+
+In the [Lab Notebook](README.md):
+
+1. Answer the questions and show your work for 2.2.1 in well-formatted Markdown, including whatever images, tables, or other graphical elements you find necessary. 
+2. Link to the program from 2.2.2.  
+3. Link to a demo video showing the execution of the program from 2.2.2.  
+2. Link to the program from 2.2.3.  
+3. Link to a demo video showing the execution of the program from 2.2.3.  
+2. Link to the program from 2.2.4.  
+3. Link to a demo video showing the execution of the program from 2.2.4.  
+2. Link to the program from 2.2.5.  
+3. Link to a demo video showing the execution of the program from 2.2.5.  
 
 
 ### Step 3: Computation
@@ -341,15 +368,16 @@ In the [programs](programs) directory:
 
 In the [Lab Notebook](README.md):
 
-1. Show your work for 3.2.1 in well-formatted Markdown, including whatever images, tables, or other graphical elements you deem necessary.  
+1. Show your work for 3.2.1 in well-formatted Markdown, including whatever images, tables, or other graphical elements you find necessary.  
 2. Link to the program from 3.2.2.  
 3. Link to a demo video showing the execution of the program from 3.2.2.  
-4. Show your work for 3.2.3 in well-formatted Markdown, including whatever images, tables, or other graphical elements you deem necessary.  
-5. Show your work for 3.2.4 in well-formatted Markdown, including whatever images, tables, or other graphical elements you deem necessary.  
-6. Link to the program from 3.2.5.  
-7. Link to a demo video showing the execution of the program from 3.2.5.  
-8. Link to the program from 3.2.6.  
-9. Link to a demo video showing the execution of the program from 3.2.6.  
+4. Show your work for 3.2.3 in well-formatted Markdown, including whatever images, tables, or other graphical elements you find necessary.  
+5. Show your work for 3.2.4 in well-formatted Markdown, including whatever images, tables, or other graphical elements you find necessary.  
+6. Answer the question in 3.2.5.1.  
+7. Link to the program from 3.2.5.  
+8. Link to a demo video showing the execution of the program from 3.2.5.  
+9. Link to the program from 3.2.6.  
+10. Link to a demo video showing the execution of the program from 3.2.6.  
 
 
 ### Step 4: Minimal assembly (part 1)  
