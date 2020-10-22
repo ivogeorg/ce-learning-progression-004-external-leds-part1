@@ -280,7 +280,7 @@ In the [Lab Notebook](README.md):
    1. 2D array.  
    2. Array sorted by first column.  
    3. Create an index array for the second column.  
-      <img src="images/index-array-into-record-array.png" alt="Index into Record table" width="600" />  
+      <img src="images/index-array-into-record-array-hex.png" alt="Index into Record table" width="600" />  
 5. `[<lernact-prac>]`**[Optional challenge, max 10 extra step points]** **TODO: Sketch** Array-based malloc simulation:
    1. Byte-array simulation.
    2. Object memory footprint.  
