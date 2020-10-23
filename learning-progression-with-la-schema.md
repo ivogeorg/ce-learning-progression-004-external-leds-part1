@@ -286,6 +286,8 @@ In the [Lab Notebook](README.md):
    2. Object memory footprint.  
    3. Memory alignment.  
    4. Calculation of array element addresses.  
+      <img src="images/malloc-sim-1.png" alt="Memory management with malloc and free (1 of 2)" width="600" />  
+      <img src="images/malloc-sim-2.png" alt="Memory management with malloc and free (2 of 2)" width="600" />  
 
 #### 3. Present
 [[toc](#table-of-contents)]
