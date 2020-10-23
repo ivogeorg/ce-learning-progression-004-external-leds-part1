@@ -417,11 +417,14 @@ LDAm addr | 00 20 | 16 bit address | (addr) --> A | 3
 LDApc | 00 40 | null operand | PC --> A | 3
 STAm addr | 00 80 | 16 bit address | A --> (addr) | 3
 STApc PC | 01 00 | null operand | A --> PC | 3
+ 
+**TODO: Sketches**  
   
 The four instructions can be summarized as Load, Store, Add, and Branch if Overflow Set.  Each memory operation is assumed to take one clock, and ALU operations take one clock also.  ALU (Arithmetic and Logic Unit) is something of a misnomer here, since this chip can only add.  For example, "ADD addr" takes four clocks, two to fetch the instruction and operand, one to read the memory, and one more to do the addition.
 
 ##### micro:bit hex files
 
+**TODO: Research & take apart a file and show contents (runtimes, program, etc.) _Where?_**  
 
 #### 2. Apply
 [[toc](#table-of-contents)]
