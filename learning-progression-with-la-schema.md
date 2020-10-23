@@ -441,7 +441,8 @@ The four instructions can be summarized as Load, Store, Add, and Branch if Overf
 
 1. `[<lernact-prac>]`Decoding instruction binary patterns. Reading program lines in binary.  
 2. `[<lernact-prac>]`Counting clock cycles for a program.    
-3. `[<lernact-prac>]`**[Optional challenge, max 10 extra step points]** Write a function in F-4 MISC assembly.  
+3. `[<lernact-prac>]`**[Optional challenge, max 5 extra step points]** Trace a program in F-4 MISC assembly.  
+4. `[<lernact-prac>]`**[Optional challenge, max 10 extra step points]** Write a function in F-4 MISC assembly.  
 
 #### 3. Present
 [[toc](#table-of-contents)]
