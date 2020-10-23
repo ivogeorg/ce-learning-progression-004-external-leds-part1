@@ -411,7 +411,7 @@ Instruction | Opcode | Operand | Operation | Clocks
 ADDi imm | 00 01 | 16 bit value | imm+(A) --> A | 3
 ADDm addr | 00 02 | 16 bit address | (addr)+(A) --> A | 4
 ADDpc | 00 04 | null operand | PC+(A) --> A | 3
-BVS addr | 00 08 | 16 bit address | (addr) --> PC if <v>=1 | 3
+BVS addr | 00 08 | 16 bit address | (addr) --> PC if \<v>=1 | 3
 LDAi imm | 00 10 | 16 bit value | imm --> A | 3
 LDAm addr | 00 20 | 16 bit address | (addr) --> A | 3
 LDApc | 00 40 | null operand | PC --> A | 3
