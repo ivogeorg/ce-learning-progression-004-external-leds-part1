@@ -197,7 +197,7 @@ The signed integer is also a primitive type.
 ##### IEEE 754 floating point  
 
 `[<lernact-rd>]`There are many different ways to represent `[<cept>]`_real_ numbers in binary, but the established standard is the [IEEE 754 format](https://en.wikipedia.org/wiki/Single-precision_floating-point_format). The full coverage of this standard is beyond the scope of this learning progression, but we need to understand the most important elements:
-1. The standard is based on the `[<cept>]`[_scientific notation_](https://www.mathsisfun.com/numbers/scientific-notation.html) for real numbers. For example t
+1. The standard is based on the `[<cept>]`[_scientific notation_](https://www.mathsisfun.com/numbers/scientific-notation.html) for real numbers. For example:  
    1. The decimal real number <img src="https://render.githubusercontent.com/render/math?math=- 300.498"> will be written in scientific notation as <img src="https://render.githubusercontent.com/render/math?math=- 3.00489 * 10^2">. 
    2. For binary, analogously, the number <img src="https://render.githubusercontent.com/render/math?math=- 101.011"> will be written as follow in scientific notation <img src="https://render.githubusercontent.com/render/math?math=- 1.01011 * 2^2">. _Note that, for clarity, we write the base and power in decimal._   
    3. Finally, the number <img src="https://render.githubusercontent.com/render/math?math=0.00010101"> will be represented in scientic notation as follows <img src="https://render.githubusercontent.com/render/math?math=1.0101 * 2^{-4}">. _Note that, for clarity, we write the base and power in decimal._  
