@@ -438,7 +438,7 @@ LDAi imm | Load an immediate value _imm_ into register A
 LDAm addr | Load the value at an address _addr_ into register A  
 LDApc | Load the value of the program counter PC into register A  
 STAm addr | Store the value of register A at address _addr_  
-STApc PC | Store the value of register A in the program counter PC  
+STApc | Store the value of register A in the program counter PC  
 
 **Legend**  
 Symbol | Interpretation
