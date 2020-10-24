@@ -427,7 +427,29 @@ LDAm addr | 00 20 | 16 bit address | (addr) --> A | 3
 LDApc | 00 40 | null operand | PC --> A | 3
 STAm addr | 00 80 | 16 bit address | A --> (addr) | 3
 STApc PC | 01 00 | null operand | A --> PC | 3
- 
+
+Instruction | Verbal elaboration 
+--- | --- 
+ADDi imm | Add an immediate value _imm_ and the value at address in register A, and write the result into register A  
+ADDm addr | Add the value at an address _addr_ and the value at address in register A, and write the result into register A  
+ADDpc | Add the value of the program counter PC and the value at address in register A, and write the result into register A  
+BVS addr | If the overflow bit \<v> is set (is equal to 1), write the value at an address _addr_ into the program counter PC  
+LDAi imm | Load an immediate value _imm_ into register A   
+LDAm addr | Load the value at an address _addr_ into register A  
+LDApc | Load the value of the program counter PC into register A  
+STAm addr | Store the value of register A at address _addr_  
+STApc PC | Store the value of register A in the program counter PC  
+
+**Legend**  
+Symbol | Interpretation
+--- | ---
+imm | A numeric literal (e.g. 6<sub>10</sub>)
+A | The value in register A (**TODO:** What is the size?)  
+(A) | Value in memory location at address stored in register A
+(addr) | Value in memory location at address _addr_
+\<v> | A single bit which is set to 1 when the result of an instruction overflows
+PC | Program counter holding the address of the next instruction to be executed
+
 **TODO: Sketches**  
   
 The four instructions can be summarized as Load, Store, Add, and Branch if Overflow Set.  Each memory operation is assumed to take one clock, and ALU operations take one clock also.  ALU (Arithmetic and Logic Unit) is something of a misnomer here, since this chip can only add.  For example, "ADD addr" takes four clocks, two to fetch the instruction and operand, one to read the memory, and one more to do the addition.
