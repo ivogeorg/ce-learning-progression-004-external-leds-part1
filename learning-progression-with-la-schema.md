@@ -265,11 +265,37 @@ In the [Lab Notebook](README.md):
 
 ##### Arrays and memory
 
+Arrays have indices. They are the closest analog of computer memory. Memory is organized as a large array with addresses. Each byte (8-bits) has an address, starting from 0x0 up to the highest address depending on the size of the memory.
+
+**TODO: A convincing fundamental motivating definition of memory.**  
+```
+     -----------------
+0x00 | | | | | | | | |
+     -----------------
+0x01 | | | | | | | | |
+     -----------------
+0x02 | | | | | | | | |
+     -----------------
+0x03 | | | | | | | | |
+     -----------------
+```
 ##### Memory layout  
+
+Primitive types: integers, floats, booleans.  
+Composite types: strings, objects.  
+Arrays of any type.  
+
+Functions.  
 
 ##### Addressing  
 
+Addresses, references, and pointers.  
+
 ##### Random access
+
+Array formula: _base address + index * base type size_. Arrays and memory revisited. Constant access time regardless of address. RAM.  
+
+Array address calculation example with sketch.  
 
 #### 2. Apply
 [[toc](#table-of-contents)]
@@ -329,18 +355,67 @@ In the [Lab Notebook](README.md):
 
 Carry  
 
+```
+      .  ....
+     101010101
+   + 001001111
+     ---------
+     110010100       
+```
+
 ##### Subtraction in 2s complement
 
+Explanation and example from [Google doc](https://docs.google.com/document/d/17z5Ww1QFLPbbr-kol_xEqEA7ggiUEjZcUP2I2lLfssM/edit#heading=h.tqm2sqa6b8ta).  
+
 ##### Shifting   
+
+1. Logical shift.  
+2. Arithmetic shift.  
+   - Right shift preserves sign.  
 
 ##### Multiplication
 
 Addition & shift  
 2 2-bit numbers as an example  
+```
+   10 * 11
+   -------
+        10
+   +   100
+   -------
+       110
+```
+
+```
+   101 * 10101
+   -----------
+           101
+            0|
+   +     101||
+          0|||
+       101||||
+   -----------
+       1101001
+```
+
+```
+   10101 * 101
+   -----------
+         10101
+   +        0|
+   +   10101||
+   -----------
+       1101001
+```
+
+##### Instruction set architecture
+
+The most basic _operations_ the processor executes. Note that operations are a very high abstraction level relative to electric signals and bit-states, which are part of the physical hardware of the computing device, but they are the lowest abstraction level in software. This is where the hardware and software stack meet.
 
 ##### Registers
 
-##### Instruction set architecture
+Small number of very fast memory locations, deep inside the processor, used in the execution of a processor's instructions.
+
 
 #### 2. Apply
 [[toc](#table-of-contents)]
@@ -397,17 +472,29 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-##### Central processing unit (CPU)
+##### Central processing unit
+
+The actual processor component which performs the operations of the instruction set.  
 
 ##### Processor addressing modes  
 
+List and illustrate with sketches.  
+
 ##### Load and store
+
+Link to memory.  
 
 ##### Branching revisited
 
+Moving through the address space.  
+
 ##### Status bits
 
+Program state. List with examples.  
+
 ##### Clock cycles
+
+Synchronous circuits. Motivate the clock!   
 
 ##### Minimal instruction set CPU
 
