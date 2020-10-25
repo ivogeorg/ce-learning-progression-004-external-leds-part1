@@ -513,7 +513,7 @@ LDAi imm | 00 10 | 16 bit value | imm --> A | 3
 LDAm addr | 00 20 | 16 bit address | (addr) --> A | 3
 LDApc | 00 40 | null operand | PC --> A | 3
 STAm addr | 00 80 | 16 bit address | A --> (addr) | 3
-STApc PC | 01 00 | null operand | A --> PC | 3
+STApc | 01 00 | null operand | A --> PC | 3
 
 Instruction | Verbal elaboration 
 --- | --- 
