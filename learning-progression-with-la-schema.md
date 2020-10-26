@@ -315,7 +315,7 @@ Array address calculation example with sketch.
    2. Array sorted by first column.  
    3. Create an index array for the second column.  
       <img src="images/index-array-into-record-array-hex.png" alt="Index into Record table" width="600" />  
-5. `[<lernact-prac>]`**[Optional super challenge, max 16 extra step points]** **TODO: Sketch** Array-based malloc simulation ([program draft](https://github.com/ivogeorg/ce-learning-progressions-selected-programs/blob/master/malloc-simulation.js):
+5. `[<lernact-prac>]`**[Optional super challenge, max 16 extra step points]** **TODO** Array-based malloc simulation ([program draft](https://github.com/ivogeorg/ce-learning-progressions-selected-programs/blob/master/malloc-simulation.js):
    1. Byte-array simulation.
    2. Object memory footprint.  
    3. Memory alignment.  
