@@ -381,7 +381,7 @@ Addition & shift
    10 * 11
    -------
         10
-   +   100
+   +   10|
    -------
        110
 ```
@@ -403,18 +403,20 @@ Addition & shift
    -----------
          10101
    +        0|
-   +   10101||
+       10101||
    -----------
        1101001
 ```
 
+**TODO: Table (needed as example for 3.2.4)**  
+
 ##### Instruction set architecture
 
-The most basic _operations_ the processor executes. Note that operations are a very high abstraction level relative to electric signals and bit-states, which are part of the physical hardware of the computing device, but they are the lowest abstraction level in software. This is where the hardware and software stack meet.
+The most basic _operations_ the processor executes. Note that operations are a very high abstraction level relative to electric signals and bit-states, which are part of the physical hardware of the computing device, and thus, the hardware stack. At the same time, operations are the _lowest abstraction level_ in the software stack. This is where the hardware and software stack intersect.
 
 ##### Registers
 
-Small number of very fast memory locations, deep inside the processor, used in the execution of a processor's instructions.
+Small number of very fast memory locations, deep inside the processor, used in the execution of the processor's instructions. They hold instructions, operands, results, and control state.
 
 
 #### 2. Apply
